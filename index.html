@@ -6,8 +6,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robert Schmidt</title>
     <link rel="icon" href="logo.png">
+    <style>
+
+        *{
+            vertical-align: baseline;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            vertical-align: baseline;
+        }
+
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .navlist{
+            display: flex;
+            font-weight: 300;
+            font-size: 20px;
+            list-style: none;
+            z-index: 1;
+            width: 100%;
+        }
+
+        #socials{
+            background-color: #3498DB;
+            color: #fff;
+            padding: 10px 10px 13px 10px;
+            margin-bottom: -50px;
+        }
+
+        .navbar ul{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .navbar ul li{
+            margin: 15px 35%; 
+        }
+
+        .navbar ul li:hover{
+            color: grey; 
+        }
+
+        .lines{
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 200px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .lineli li{
+            list-style: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .shots{
+            width: 100%;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin: 10rem auto 5em;
+            justify-content: center;
+            max-width: 1200px;
+        }
+
+        .shots img{
+            border-radius: 17px;
+            padding: 10px;
+        }
+
+        .shots img:hover{
+            opacity: 0.9;
+            transition: 200ms;
+        }
+
+        .btnwrapper{
+            justify-content: center;
+            display: flex;
+        }
+
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 100px;
+            background-color: #FD3A51;
+            padding: 20px 1px;
+            color: white;
+            text-transform: uppercase;
+            width: 300px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .btn img{
+            display: inline-block;
+            padding-right: 5px;
+            transition: 500ms;
+        }
+
+        .btn:hover{
+            opacity: 0.6;
+            transition: 300ms;
+        }
+
+
+
+    </style>
 </head>
 <body>
-    
+        <div class="navbar">
+            <ul class="navlist">
+                <li><a href="#"><img src="logocrop.png" alt=""></a></li>
+                <li><a id="socials" href="">@RobertSchmidt</a></li>
+            </ul>
+        </div>
+
+        <div class="lines">
+            <ul class="lineli">
+                <li>Gamer</li>
+                <li><span id="typed"></span></li>
+                <li>Creator</li>
+            </ul> 
+        </div>
+
+        <div class="shots">
+                <a  href=""><img src="shot1.png" width="576" height="432" alt="er"></a>
+                <a target="_blank" href="http://cablecoil.ml/"><img src="shot2.png" width="576" height="432" alt="er"></a>
+                <a  href=""><img src="shot3.png" width="576" height="432" alt="er"></a>
+                <a  href=""><img src="shot4.png" width="576" height="432" alt="er"></a>
+        </div>
+        <div class="btnwrapper">
+        <dic class="btn">
+           <a href="">
+               <img src="http://caleredwards.com/images/close-envelope.png" alt="closed_envelope">
+               Contact me
+            </a>
+        </dic>
+    </div>
+<script src="typed.js"></script>
+<script>
+
+
+var typed = new Typed("#typed", {
+        strings:["^100Front-End Developer^1500", "^100UI Designer^1500", "^100UX Designer^1500"],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true,
+        loopCount: Infinity
+    });
+
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
 </body>
 </html>
