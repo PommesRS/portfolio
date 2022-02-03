@@ -4,171 +4,679 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Schmidt</title>
-    <link rel="icon" href="logo.png">
+    <title>Robin Schulze</title>
+    <link rel="icon" href="./logo.svg">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <style>
 
         *{
-            vertical-align: baseline;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
 
         body{
-            margin: 0;
-            padding: 0;
-            height: 100%;
+            box-sizing: border-box;
             width: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            vertical-align: baseline;
         }
 
         a{
-            color: inherit;
             text-decoration: none;
+            color: inherit;
+            width: 0;
+            height: 0;
         }
 
-        .navlist{
+        /*Header start*/
+
+        .topnav{
+            display: none;
+        }
+
+        header{
+            position: fixed;
             display: flex;
-            font-weight: 300;
-            font-size: 20px;
-            list-style: none;
-            z-index: 1;
+            align-items: center;
             width: 100%;
+            left: 0;
+            transition: .6s;
+            overflow: hidden;
+            top: 0;
+            z-index: 2;
         }
 
-        #socials{
-            background-color: #3498DB;
-            color: #fff;
-            padding: 10px 10px 13px 10px;
-            margin-bottom: -50px;
+        .logo{
+            text-align: center;
+            font-size: xx-large;
+            padding: 19px 0 10px 30mm;
         }
 
-        .navbar ul{
+        #toplogo2{
+            display: none;
+        }
+
+        .navbar{
+            text-transform: uppercase;
+            color: #252525;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        #nav{
             display: flex;
-            width: 100%;
+            align-items: center;
             justify-content: center;
+            transform: translateY(-11%);
+        }
+
+        #nav li{
+            display: inline-block;
+            padding: .5em 0px;
+        }
+
+        #nav li a {
+            padding: 8px 14.4px;
+            transition: .15s;
+        }
+
+        header.sticky{
+            background-color: rgba(0, 0, 0, 1);
+            transition: 1s;
+        }
+
+        header.sticky li{
+            color: white;
+            transition: .6s;
+            padding: 0px 0 -10px 0px;
+        }
+
+        header.sticky .logo img{
+            filter: invert(1);
+            transition: .6s;
+        }
+        /*Header end*/
+        /*Landing start*/
+
+        .signature{
+            position: absolute;
+            z-index: -1;
+            transform: scale(.9);
+            display: flex;
+            top: 150px;
+            right: 0px;
+            opacity: 1;
+        }
+
+        .landing-wrapper{
+            padding: 10mm 0mm 10mm 0mm;
+            width: 100%;
+        }
+
+        .greet{
+            padding-left: 30mm;
+            font-size: 80pt;
+            margin: 100px 0 0 -6px;
+            
+        }
+
+        .nottyped{
+            display: none;
+        }
+
+        .blue{
+            color: #5a5aff;
+        }
+
+        .shortdesc{
+            font-size: 20pt;
+            color: #252525;
+            margin-top: 0px;
+            margin-bottom: 40px;
+            padding-left: 30mm;
+        }
+
+        .btn1{
+            color: #252525;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 15pt;
+            padding: 15px;
+            border: 2px solid #5a5aff;
+            transition: .5s;
+            margin-left: 30mm;
+        }
+
+        .landing-wrapper a{
+            width: fit-content;
+        }
+
+        .btn1:hover {
+            box-shadow: inset 0px 80px 0 0 #5a5aff, 5px 5px 0 0 #5a5aff75;
+            color: white;
+            transition: .5s;
+        }
+
+
+        svg{
+            display: block;
+            margin-top: -50px;
+        }
+
+        /*Landing end*/
+        /*Main content start*/
+
+        .maincontent-wrapper{
+            background: linear-gradient(to bottom,rgba(255,128,128,1) 0%, rgb(128, 230, 255) 100%);
+            height: 100%;
+            width: 100%;
+        }
+
+        .content{
+            margin: 0mm 30mm 0mm 30mm; 
+        }
+
+        #section1{
+            padding-top: 60px;
+        }
+
+        #section2{
+            padding-top: 1px;
+        }
+
+        #section3{
+            padding-top: 60px;
+        }
+
+        .about{
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 30pt;
+        }
+
+        .about-desc{
+            color: #252525;
+            text-transform: none;
+        }
+
+        .skills{
+            text-align: right;
+            text-transform: uppercase;
+            font-size: 30pt;
+        }
+
+        .skills h1{
+            margin-top: 100px;
+        }
+
+        .skills-desc{
+            color: #252525;
+            text-transform: none;
+        }
+
+        #section3{
             padding: 0;
         }
 
-        .navbar ul li{
-            margin: 15px 35%; 
-        }
-
-        .navbar ul li:hover{
-            color: grey; 
-        }
-
-        .lines{
+        .offer{
             text-transform: uppercase;
-            text-align: center;
-            margin-top: 200px;
-            font-size: 50px;
-            font-weight: bold;
+            font-size: 30pt;
+            padding: 0;
         }
 
-        .lineli li{
-            list-style: none;
-            margin-top: 20px;
-            margin-bottom: 20px;
+        .offer h1{
+            margin-top: 100px;
         }
 
-        .shots{
-            width: 100%;
-            flex-wrap: wrap;
-            flex-direction: row;
-            margin: 10rem auto 5em;
-            justify-content: center;
-            max-width: 1200px;
-        }
-
-        .shots img{
-            border-radius: 17px;
-            padding: 10px;
-        }
-
-        .shots img:hover{
-            opacity: 0.9;
-            transition: 200ms;
-        }
-
-        .btnwrapper{
-            justify-content: center;
-            display: flex;
-        }
-
-        .btn{
-            display: flex;
-            justify-content: center;
+        .offer-desc{
+            color: #252525;
+            text-transform: none;
             margin-bottom: 100px;
-            background-color: #FD3A51;
-            padding: 20px 1px;
-            color: white;
+        }
+        /*contact form start*/
+        .cont-head{
             text-transform: uppercase;
-            width: 300px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 20px;
+            font-size: 30pt;
+            margin-top: 100px;
+            text-align: center;
         }
 
-        .btn img{
-            display: inline-block;
-            padding-right: 5px;
-            transition: 500ms;
+        .cont{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
         }
 
-        .btn:hover{
-            opacity: 0.6;
-            transition: 300ms;
+        form{
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .input-group{
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        input, textarea{
+            width: 100%;
+            padding: 10px 0;
+            outline: 0;
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+            font-size: 15px;
+        }
+
+        label{
+            height: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 10px;
+            color: #fff;
+            cursor: text;
+            transition: 0.2s;
+        }
+
+        button{
+            padding: 10px 0;
+            color: #fff;
+            outline: none;
+            background: transparent;
+            border: 1px solid #fff;
+            width: 40%;
+            cursor: pointer;
+            font-size: 15px;
+            float: right;
+        }
+
+        input:focus~label,
+        input:valid~label,
+        textarea:focus~label,
+        textarea:valid~label{
+            top: -35px;
+            font-size: 14px;
+        }
+        /*contact form end*/
+        /*Main content end*/
+        /*Footer start*/
+
+        footer{
+            
+            background: #252525;
+        }
+
+        .foot{
+            text-align: center;
+            padding: 20px;
+        }
+
+        .foot img{
+            filter: invert(1);
+        }
+
+        #botlogo2{
+            display: none;
+        }
+
+        .foot span{
+            font-size: 10pt;
+            color: #fff;
         }
 
 
+        /*Footer end*/
+
+        @media only screen and (max-width: 768px){
+
+            header{
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                left: 0;
+                transition: .6s;
+                overflow: hidden;
+                top: 0;
+                background-color: black;
+            }
+
+            .logo{
+                padding-left: 0px;
+                filter: invert(1);
+            }
+
+            #toplogo{
+                display: none;
+            }
+
+            #toplogo2{
+                display: contents;
+            }
+
+            header.sticky .logo img{
+                filter: invert(0);
+                transition: .6s;
+            }
+
+            #nav{
+                color: #fff;
+                display: none;
+                transition: all 0.5s;
+            }
+
+            #nav.open{
+                display: block;
+                transition: all 0.5s;
+            }
+
+            .signature{
+                position: absolute;
+                z-index: -1;
+                transform: scale(.4);
+                display: flex;
+                top: -100px;
+                right: -350px;
+                opacity: 1;
+            }
+
+            .greet{
+                font-size: 50pt;
+                padding-left: 10mm;
+            }
+
+            .shortdesc{
+                padding-left: 10mm;
+            }
+
+            .btn1{
+                margin-left: 10mm;
+            }
+
+            svg{
+                margin-top: 50px;
+            }
+
+            .about{
+                text-align: center;
+                font-size: 20pt;
+            }
+
+            .skills{
+                text-align: center;
+                font-size: 20pt;
+            }
+
+            .offer{
+                text-align: center;
+                font-size: 20pt;
+            }
+
+            .maincontent-wrapper{
+                margin-top: -2px;
+            }
+
+            .content{
+                margin: 0mm 10mm 0mm 10mm;
+            }
+
+            #botlogo1{
+                display: none;
+            }
+
+            #botlogo2{
+                display: contents;
+            }
+
+        }
+
+        @media only screen and (max-width: 580px){
+
+            .landing-wrapper{
+                transition: .6s;
+                text-align: center;
+            }
+
+            .signature{
+                position: absolute;
+                z-index: -1;
+                transform: scale(.4);
+                display: flex;
+                top: -100px;
+                right: 0px;
+                left: 0px;
+                opacity: 1;
+                width: 100%;
+            }
+
+            .signature img{
+                position: absolute;
+                z-index: -1;
+                transform: scale(1.1);
+                display: flex;
+                top: 650px;
+                right: 0px;
+                left: 0px;
+                opacity: .5;
+                width: 100%;
+            }
+
+            .greet{
+                font-size: 40pt;
+                padding-left: 0mm;
+            }
+
+            .shortdesc{
+                padding-left: 0mm;
+                font-size: 15pt;
+                transition: .6s;
+            }
+
+            .btn1{
+                margin-left: 0mm;
+                font-size: 10pt;
+            }
+
+            .about{
+                text-align: center;
+                font-size: 15pt;
+            }
+
+            .skills{
+                text-align: center;
+                font-size: 15pt;
+            }
+
+            .offer{
+                text-align: center;
+                font-size: 15pt;
+            }
+            
+            .cont-head{
+                font-size: 20pt;
+            }
+
+            form{
+                max-width: 400px;
+            }
+
+            input, textarea{
+                font-size: 10pt;
+                width: 100%;
+            }
+
+        }
+
+        @media only screen and (max-width: 424px) {
+
+            .greet{
+                height: 300px;
+            }
+        }
+
+        @media only screen and (max-width: 270px) {
+
+            .nottyped{
+                display: contents;
+            }
+
+            #typed{
+                display: none;
+            }
+
+            .typed-cursor{
+                display: none;
+            }
+            
+        }
 
     </style>
 </head>
 <body>
-        <div class="navbar">
-            <ul class="navlist">
-                <li><a href="#"><img src="logocrop.png" alt=""></a></li>
-                <li><a id="socials" href="">@RobertSchmidt</a></li>
-            </ul>
-        </div>
 
-        <div class="lines">
-            <ul class="lineli">
-                <li>Gamer</li>
-                <li><span id="typed"></span></li>
-                <li>Creator</li>
-            </ul> 
-        </div>
+    <header>
+        <div class="logo">
+            <a id="toplogo"><img src="./logo.svg" alt="logo" width="34" height="34"></a>
+            <a id="toplogo2"><img src="./logo.svg" alt="logo" width="34" height="34"></a> 
+            </div>
+            <div class="navbar">
+                <ul id="nav">
+                    <li><a href="#section1">About</a></li>
+                    <li><a href="#section2">Skills</a></li>
+                    <li><a href="#section3">Offer</a></li>
+                    <li><a href="#section4">Contact</a></li>
+                </ul>
+            </div>
+        </header>
 
-        <div class="shots">
-                <a  href=""><img src="shot1.png" width="576" height="432" alt="er"></a>
-                <a target="_blank" href="http://cablecoil.ml/"><img src="shot2.png" width="576" height="432" alt="er"></a>
-                <a  href=""><img src="shot3.png" width="576" height="432" alt="er"></a>
-                <a  href=""><img src="shot4.png" width="576" height="432" alt="er"></a>
+        
+
+    <div class="landing-wrapper">
+        <div class="signature">
+            <img src="./test2.svg" alt="signature" width="1200" height="700">
         </div>
-        <div class="btnwrapper">
-        <dic class="btn">
-           <a href="cont.html">
-               <img src="close-envelope.png" alt="closed_envelope">
-               Contact me
-            </a>
-        </dic>
+        <h1 class="greet">
+            Hello<span class="blue">!</span>
+            <br>
+            I am <br><span id="typed"></span><span class="nottyped">Robin</span>. 
+        </h1>
+        <h2 class="shortdesc">
+            I will develope your webste to the exact <br>
+            expectations of you! 
+        </h2>
+        <a href="#section4">
+            <span class="btn1">
+                Contact Me
+            </span>
+        </a>
+        
     </div>
-<script src="typed.js"></script>
-<script>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300"><path fill="#ff8080" fill-opacity="1" d="M0,224L80,218.7C160,213,320,203,480,176C640,149,800,107,960,117.3C1120,128,
+        1280,192,1360,224L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    <div class="maincontent-wrapper">
+        <div class="content">
+            <section id="section1" class="about">
+                <h1>About me<span class="blue">.</span></h1>
+                <p class="about-desc">I am a self taught web developer who <br>
+                    blends the needed know-how with the <br>
+                    expertise in HTML, CSS and Blender together <br>
+                    to create your next web project!  </p> 
+            </section>
 
+            <section id="section2" class="skills">
+                <h1>Skills<span class="blue">.</span></h1>
+                <p class="skills-desc">
+                    Programing: Visual Studio Code<br>
+                    HTML, CSS, JS, Blender<br>
+                    Design: Adobe Photoshop</p> 
+            </section>
 
-var typed = new Typed("#typed", {
-        strings:["^100Front-End Developer^1500", "^100UI Designer^1500", "^100UX Designer^1500"],
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true,
-        loopCount: Infinity
-    });
+            <section id="section3" class="offer">
+                <h1>What i offer<span class="blue">.</span></h1>
+                <p class="offer-desc">
+                    I offer a small but well chosen list of services: <br>
+                    - I will make a responsive Website which <br> &nbsp;&nbsp; is cut to your exact conditions. <br>
+                    - I will (if needed) make a 3D model of your <br> &nbsp;&nbsp; product and implent it into the website. <br>
+                    - I will also provide a mockup of the website <br> &nbsp;&nbsp; for you to make changes.
+                </p>
+            </section>
 
-    function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-</script>
+            <h1 class="cont-head">Contact me<span class="blue">:</span></h1>
+
+            <section id="section4" class="cont">
+                <form onsubmit="success()" action="https://formsubmit.co/tischa.rs@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="http://localhost:3000/">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email"><i class="fas fa-envelope"></i> Email adress</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea type="text" name="message" id="message" rows="8" required></textarea>
+                        <label for="message"><i class="fas fa-comment"></i> Your message</label>
+                    </div>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+                </form>
+            </section>
+        </div>
+
+        <footer>
+            <div class="foot">
+                    <a id="botlogo1" href="#"><img src="./logo.png" alt="logo" width="66" height="59,5"></a>
+                    <a id="botlogo2" href="#"><img src="./logo.png" alt="logo" width="49,5" height="44,625"></a>
+                    <br>
+                    <span>© Robin Schulze 2021 <br> tischa.rs@gmail.com</span>
+            </div>
+        </footer>
+
+    </div>
+    
+    <script src="typed.js"></script>
+    <script>
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+    <script>
+        function success(){
+            window.alert('Email successfully sent!');
+        }
+    </script>
+    <script>
+        var logo = document.getElementById("toplogo2");
+        var nav = document.getElementById("nav");
+
+        logo.onclick = function(){
+            if(nav.className == "open"){
+                //close the menu
+                nav.className = " ";
+            }else{
+                //open the menu
+                nav.className = "open";
+            }
+        };
+
+    </script>
+    <script>
+        var wurst = document.getElementById("typed");
+         var typed = new Typed(wurst, {
+                    strings:["^100Robin^1500", "^100a Front-End Dev^1500", "^100an UI Designer^1500", "^100an UX Designer^1500"],
+                    typeSpeed: 50,
+                    backSpeed: 50,
+                    loop: true,
+                    loopCount: Infinity
+                });   
+        </script>
 </body>
 </html>
